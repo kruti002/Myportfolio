@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
@@ -7,16 +7,29 @@ import logo from "../assets/logo.png";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <nav className="fixed w-full z-50 top-0 left-0 bg-transparent backdrop-blur-sm px-6 py-4 flex justify-between items-center bg-[#050510]/30 border-b border-white/5">
+    <nav className={`fixed w-full z-50 top-0 left-0 px-6 py-4 flex justify-between items-center transition-all duration-500 ${isScrolled ? 'bg-transparent border-none' : 'bg-[#050510]/30 border-b border-white/5'}`}>
       <div className="flex items-center gap-2 font-code">
         <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
           &lt;
         </span>
-        <span className="text-xl md:text-2xl font-bold text-white tracking-tight">
+        <span className="text-2xl md:text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400" style={{ fontFamily: "'Dancing Script', cursive" }}>
           Kruti Shah
         </span>
         <span className="text-xl md:text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
@@ -36,7 +49,7 @@ const Navbar = () => {
               whileTap={{ scale: 0.95 }}
               className="
       px-6 py-2 rounded-full
-      bg-black/40 backdrop-blur-md
+      bg-black/40
       border border-[#00d8ff]
       text-[#00d8ff] font-semibold
       shadow-[0_0_15px_rgba(0,216,255,0.5)]
@@ -66,7 +79,7 @@ const Navbar = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={toggleMenu}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40"
+              className="fixed inset-0 bg-black/60 z-40"
             />
 
             {/* Drawer */}
@@ -84,7 +97,7 @@ const Navbar = () => {
               </div>
 
               <div className="flex flex-col gap-6 mt-10">
-                {["About", "Education", "Skills", "Projects", "Experience", "Contact"].map((item) => (
+                {["Home", "About", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
                   <a
                     key={item}
                     href={`#${item.toLowerCase().replace(" ", "-")}`}

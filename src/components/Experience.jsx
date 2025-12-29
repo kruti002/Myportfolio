@@ -1,45 +1,59 @@
 import { motion } from "framer-motion";
-import { FaBriefcase, FaGraduationCap } from "react-icons/fa";
+import { FaBriefcase, FaCode } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "Software Developer Intern",
-        company: "Tech Innovators Inc.",
-        period: "May 2024 - Present",
+        title: "AI Intern",
+        company: "One Oath Foundation",
+        period: "Aug 2023 - Sep 2023",
         type: "work",
-        description: "Contributed to backend microservices using Python and Flask. Optimized database queries in PostgreSQL, reducing latency by 30%. Collaborated with frontend team to integrate REST APIs."
+        highlights: [
+            "Automated an assessment system using KNN for response classification and FPDF for instant report generation",
+            "Built a ML-based recommendation system using Deep Reinforcement Learning to suggest personalized developmental steps for children, improving accuracy by 12%"
+        ]
     },
     {
-        title: "Master of Computer Science",
-        company: "University of Technology",
-        period: "2023 - 2025",
-        type: "education",
-        description: "Specializing in Artificial Intelligence and Machine Learning. Relevant Coursework: Advanced Algorithms, Cloud Computing, Neural Networks."
-    },
-    {
-        title: "Web Development Intern",
-        company: "Creative Solutions LLP",
-        period: "Jan 2023 - Apr 2023",
+        title: "Python Intern",
+        company: "Emkay Global Financial Services Limited",
+        period: "July 2023 - Sep 2023",
         type: "work",
-        description: "Built responsive web interfaces using React.js and Tailwind CSS. Implemented user authentication with Firebase and deployed applications on Vercel."
+        highlights: [
+            "Created a real-time alert system using Python for algorithmic orders without an identifier, featuring dynamic notifications, order export, and query search by symbols, client ID, and user batch, processing inputs every 15 seconds",
+            "Engineered an application to generate order-to-trade ratios from compressed transaction files, automating and customizing email reports of the results",
+            "Conducted a stock prediction study on Infosys using LSTM, forecasting a 5–7% rise pre-earnings and 2–3% drop post-earnings"
+        ]
     },
     {
-        title: "Bachelor of Technology",
-        company: "State University",
-        period: "2019 - 2023",
-        type: "education",
-        description: "Major in Computer Science & Engineering. Graduated with Honors. Capstone Project: Automated Traffic Control System using OpenCV."
+        title: "Data Analyst",
+        company: "NOQ's Digital Pvt Ltd",
+        period: "June 2023 - July 2023",
+        type: "work",
+        highlights: [
+            "Managed and maintained databases, restructuring raw data into organized formats to enable seamless analysis and reporting",
+            "Designed data models to uncover customer trends and behavioral patterns, supporting strategic business decisions",
+            "Created dashboards using Google Sheets and Power BI, automating data extraction from multiple sources for real-time insights"
+        ]
+    },
+    {
+        title: "GirlScript Summer Of Code (Contributor)",
+        company: "Open Source",
+        period: "May 2023 - July 2023",
+        type: "opensource",
+        highlights: [
+            "Developed a job application bot to automate the process, reducing it to a matter of seconds"
+        ]
     }
 ];
 
 const Experience = () => {
     return (
         <section id="experience" className="w-full min-h-screen py-20 px-6 md:px-20 relative z-10 text-white">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-6xl mx-auto">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
+                    transition={{ duration: 0.6 }}
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
@@ -56,39 +70,95 @@ const Experience = () => {
                         {experiences.map((exp, index) => (
                             <motion.div
                                 key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-100px" }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
+                                initial={{ opacity: 0, x: index % 2 === 0 ? 50 : -50, y: 30 }}
+                                whileInView={{ opacity: 1, x: 0, y: 0 }}
+                                viewport={{ once: false, margin: "-100px" }}
+                                transition={{
+                                    duration: 0.6,
+                                    delay: index * 0.15,
+                                    type: "spring",
+                                    stiffness: 100
+                                }}
                                 className={`flex flex-col md:flex-row gap-8 ${index % 2 === 0 ? "md:flex-row-reverse" : ""
                                     }`}
                             >
                                 {/* Content Side */}
                                 <div className="flex-1 ml-12 md:ml-0">
-                                    <div className={`p-6 rounded-2xl bg-[#0a0a16] border border-white/5 hover:border-cyan-500/30 transition-all duration-300 shadow-lg relative ${index % 2 === 0 ? "md:text-left" : "md:text-right"
-                                        }`}>
-                                        <h3 className="text-xl font-bold text-white mb-1">{exp.title}</h3>
-                                        <p className="text-cyan-400 font-medium mb-2">{exp.company}</p>
-                                        <p className="text-gray-400 text-sm leading-relaxed">{exp.description}</p>
-                                        <span className="md:hidden mt-3 inline-block text-xs text-gray-500 font-mono">{exp.period}</span>
-                                    </div>
+                                    <motion.div
+                                        className={`group p-6 rounded-2xl bg-gradient-to-br from-[#0a0a16] to-[#0f0f1e] border border-white/10 hover:border-cyan-500/50 transition-all duration-300 shadow-xl hover:shadow-cyan-500/20 relative overflow-hidden ${index % 2 === 0 ? "md:text-left" : "md:text-right"
+                                            }`}
+                                        whileHover={{ scale: 1.02, y: -5 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
+                                    >
+                                        {/* Animated background gradient on hover */}
+                                        <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-purple-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+
+                                        <div className="relative z-10">
+                                            <h3 className="text-xl md:text-2xl font-bold text-white mb-1 group-hover:text-cyan-300 transition-colors">
+                                                {exp.title}
+                                            </h3>
+                                            <p className="text-cyan-400 font-semibold mb-3 text-sm md:text-base">
+                                                {exp.company}
+                                            </p>
+
+                                            {/* Highlights as bullet points */}
+                                            <ul className={`space-y-2 ${index % 2 === 0 ? "md:text-left" : "md:text-right"}`}>
+                                                {exp.highlights.map((highlight, idx) => (
+                                                    <motion.li
+                                                        key={idx}
+                                                        initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+                                                        whileInView={{ opacity: 1, x: 0 }}
+                                                        viewport={{ once: false }}
+                                                        transition={{ delay: 0.1 * idx }}
+                                                        className={`text-gray-300 text-sm leading-relaxed flex items-start gap-2 ${index % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"}`}
+                                                    >
+                                                        <span className="text-cyan-400 mt-1.5 flex-shrink-0">•</span>
+                                                        <span className="flex-1">{highlight}</span>
+                                                    </motion.li>
+                                                ))}
+                                            </ul>
+
+                                            <span className="md:hidden mt-4 inline-block text-xs text-gray-500 font-mono bg-white/5 px-3 py-1 rounded-full">
+                                                {exp.period}
+                                            </span>
+                                        </div>
+                                    </motion.div>
                                 </div>
 
                                 {/* Center Dot & Icon */}
                                 <div className="absolute left-[4px] md:left-1/2 md:-translate-x-1/2 mt-1">
-                                    <div className="w-8 h-8 rounded-full bg-[#050510] border-2 border-cyan-500 flex items-center justify-center z-10 relative shadow-[0_0_15px_rgba(6,182,212,0.4)]">
-                                        {exp.type === 'work' ? (
-                                            <FaBriefcase className="text-cyan-400 text-xs" />
+                                    <motion.div
+                                        className="w-10 h-10 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center z-10 relative shadow-[0_0_20px_rgba(6,182,212,0.6)]"
+                                        initial={{ scale: 0 }}
+                                        whileInView={{ scale: 1 }}
+                                        viewport={{ once: false }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 200,
+                                            delay: index * 0.15 + 0.2
+                                        }}
+                                        whileHover={{ scale: 1.2, rotate: 360 }}
+                                    >
+                                        {exp.type === 'opensource' ? (
+                                            <FaCode className="text-white text-sm" />
                                         ) : (
-                                            <FaGraduationCap className="text-purple-400 text-xs" />
+                                            <FaBriefcase className="text-white text-sm" />
                                         )}
-                                    </div>
+                                    </motion.div>
                                 </div>
 
                                 {/* Date Side (Desktop only) */}
                                 <div className={`hidden md:block flex-1 py-2 ${index % 2 === 0 ? "text-right pr-8" : "text-left pl-8"
                                     }`}>
-                                    <div className="text-lg font-mono text-gray-500">{exp.period}</div>
+                                    <motion.div
+                                        className="text-lg font-mono text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-blue-500 font-semibold"
+                                        initial={{ opacity: 0 }}
+                                        whileInView={{ opacity: 1 }}
+                                        viewport={{ once: false }}
+                                        transition={{ delay: index * 0.15 + 0.3 }}
+                                    >
+                                        {exp.period}
+                                    </motion.div>
                                 </div>
                             </motion.div>
                         ))}

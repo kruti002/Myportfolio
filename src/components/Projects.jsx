@@ -1,9 +1,13 @@
 import { motion, AnimatePresence } from "framer-motion";
 import { FaGithub, FaExternalLinkAlt, FaCode, FaTimes, FaBrain } from "react-icons/fa";
-import { SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiFirebase, SiFastapi, SiGooglecloud, SiDocker, SiJavascript, SiGooglemaps, SiPostgresql, SiNumpy, SiPandas, SiHtml5, SiCss3, SiFlask, SiOpencv, SiKeras } from "react-icons/si";
+import { SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiFirebase, SiFastapi, SiGooglecloud, SiDocker, SiJavascript, SiGooglemaps, SiPostgresql, SiNumpy, SiPandas, SiHtml5, SiCss3, SiFlask, SiOpencv, SiKeras, SiFlutter, SiArduino, SiCplusplus } from "react-icons/si";
 import { useState, useRef, useEffect } from "react";
+import { createPortal } from "react-dom";
 import bouldermoveImg from "../assets/bouldermove.png";
 import stylesyncImg from "../assets/stylesync.png";
+import patentImg from "../assets/patent.jpg";
+import ecotrackImg from "../assets/ecotrack.jpeg";
+import kisansandhanImg from "../assets/kissandhan.jpeg";
 
 const projects = [
     {
@@ -59,15 +63,15 @@ const projects = [
         isMobile: true,
         features: [
             "3D Virtual Try-On: Uses DRM, MTM, and TFM models for realistic clothing warping, pose transfer, and texture fusion",
-            "Skin Tone Color Analysis: Python-based extraction (MTCNN/Dlib) with Gemini AI for seasonal palette classification",
-            "ResNet50 Recommendations: Personalized fashion discovery based on visual feature matching and color harmony",
+            "Skin Tone Color Analysis: Automated analysis using MTCNN and Dlib to discover flattering color palettes",
+            "Gemini AI Recommendations: Personalized fashion advice and textual content generation for users",
             "Trend-Centric Forecasting: Community voting system that dynamically influences AI-driven product recommendations",
             "Advanced Feature Extraction: ResNet50 and Vgg19 architectures for precise image and fashion processing"
         ]
     },
     {
         title: "Intelligent Yoga Pose Analysis",
-        shortDescription: "Real-time yoga posture recognition and correction system using MediaPipe and XAI for transparent feedback.",
+        shortDescription: "AI-driven real-time yoga posture recognition and correction system using MediaPipe and XAI for transparent feedback.",
         fullDescription: "Developed a real-time yoga pose analysis system that identifies 33 body landmarks and classifies 82 different poses using a Random Forest model. The platform integrates Explainable AI (SHAP) to provide interpretable feedback, helping practitioners understand specific misalignments. Built with Python and MediaPipe, it offers immediate corrections to prevent injuries and improve training effectiveness. This work was published as a research paper focused on XAI-driven real-time analysis.",
         technologies: [
             { name: "Python", icon: SiPython },
@@ -78,19 +82,104 @@ const projects = [
             { name: "React", icon: SiReact }
         ],
         links: {
-            github: "https://github.com/kruti002/yoga_pose_detection_using_xai",
+            github: "https://github.com/kruti002/RESEARCH_PAPER_1",
             demo: "#"
         },
         color: "from-green-400 to-emerald-300",
         image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=500&fit=crop",
         features: [
+            "Explainable AI (XAI): Integrates SHAP and LIME to provide transparent, human-readable feedback on pose accuracy",
             "Real-time keypoint detection for 33 body landmarks using MediaPipe and BlazePose",
             "Pose classification across 82 categories using a high-accuracy Random Forest model trained on Yoga-82 dataset",
             "Transparent AI feedback using SHAP for interpretable correction suggestions",
             "Injury prevention through comparative analysis with ideal pose datasets",
             "Actionable real-time insights for virtual yoga training and self-practice"
         ]
+    },
+    {
+
+        title: "Pipeline Traversing Robot",
+        shortDescription: "Autonomous robotic system for multi-axis pipeline inspection with gas leak detection and obstacle avoidance.",
+        fullDescription: "Designed and built an innovative robot capable of traversing pipelines horizontally and vertically using a unique combination of castor wheels and strong magnetic adhesion. This hardware-integrated system is engineered for industrial inspection, featuring real-time gas leakage detection and environmental monitoring. The robot uses ultrasonic proximity sensors and onboard imaging for autonomous obstacle avoidance, all while communicating data to a custom-built Flutter mobile application for remote monitoring and control.",
+        technologies: [
+            { name: "Arduino/C++", icon: SiArduino },
+            { name: "Flutter", icon: SiFlutter },
+            { name: "Python", icon: SiPython },
+            { name: "C++", icon: SiCplusplus },
+            { name: "Firebase", icon: SiFirebase },
+            { name: "Hardware Integration" }
+        ],
+        links: {
+            github: "https://github.com/kruti002/gas_leakage_detector_fyp",
+            demo: "#"
+        },
+        color: "from-orange-500 to-yellow-400",
+        image: patentImg,
+        features: [
+            "Vertical/Horizontal Traversal: Engineered magnetic adhesion and castor wheel mechanisms for multi-surface mobility",
+            "Real-time Leak Detection: Integrated MQ-series gas sensors and DHT sensors for environmental safety monitoring",
+            "Autonomous Navigation: Ultrasonic proximity sensors and imaging for real-time obstacle avoidance and visual inspection",
+            "Mobile App Integration: Flutter-based mobile application for real-time data visualization and manual override control",
+            "System Monitoring: Integrated temperature and humidity logging via hardware-software handoff"
+        ]
+    },
+    {
+        title: "EcoTrack",
+        shortDescription: "Cross-platform carbon footprint tracking app with gamification, OCR-based data entry, and personalized eco-insights.",
+        fullDescription: "EcoTrack is a comprehensive Flutter based mobile application designed to help users monitor and reduce their carbon footprint through daily habit tracking. The app calculates emissions across four key categories: transportation, electricity consumption, diet, and waste generation using India-specific emission factors.The platform combines environmental awareness with gamification to encourage sustainable lifestyle choices.",
+        technologies: [
+            { name: "Flutter", icon: SiFlutter },
+            { name: "Python", icon: SiPython },
+            { name: "Flask", icon: SiFlask },
+            { name: "Firebase", icon: SiFirebase },
+
+        ],
+        links: {
+            github: "https://github.com/kruti002/carbon_emission",
+            demo: "#"
+        },
+        color: "from-green-500 to-emerald-400",
+        image: ecotrackImg,
+        isMobile: true,
+        features: [
+            "Carbon Calculator: Tracks emissions from transportation (0.14 kg CO₂/km), electricity (0.82 kg CO₂/kWh), diet (1.25 kg CO₂/meal), and waste (0.1 kg CO₂/kg)",
+            "OCR Data Entry: Upload receipts and bills for automatic carbon footprint data extraction using image recognition",
+            "Gamified Leaderboard: Points based ranking system with top user showcase to encourage eco-friendly competition",
+            "Interactive Insights: Real time carbon footprint breakdown with visual charts showing impact by category",
+            "Eco Activities Hub: Personalized daily eco-friendly habit recommendations based on user behavior and mood",
+
+        ]
+    },
+    {
+        title: "Kisan Sandhan - FarmersPoint",
+        shortDescription: "AI-powered agricultural platform with multilingual speech translation, ML crop recommendations, and government scheme integration.",
+        fullDescription: "FarmersPoint (Kisan Sandhan) is a comprehensive agricultural technology platform developed for CodeShastra hackathon that empowers farmers through intelligent tools and multilingual accessibility. The platform features a real-time speech-to-text translation system supporting Indian languages like Marathi, enabling farmers to interact in their native tongue. It includes a machine learning-based crop recommendation engine that analyzes soil parameters (N, P, K) and environmental factors (temperature, humidity, rainfall) to suggest optimal crops. The system integrates automated tracking of government schemes like PM-Kisan, scrapes educational resources from official portals (NMSA, PMKSY), and processes agricultural policy documents, creating a one-stop solution for modern farming.",
+        technologies: [
+            { name: "Flutter", icon: SiFlutter },
+            { name: "Node.js", icon: SiNodedotjs },
+            { name: "Flask", icon: SiFlask },
+            { name: "Python", icon: SiPython },
+            { name: "MongoDB", icon: SiMongodb },
+            { name: "Scikit-learn" },
+            { name: "Selenium" }
+        ],
+        links: {
+            github: "https://github.com/kruti002/Codeshastra_Mishtidoi_",
+            demo: "#"
+        },
+        color: "from-green-600 to-lime-400",
+        image: kisansandhanImg,
+        isMobile: true,
+        features: [
+            "Multilingual Speech Services: Real-time speech-to-text and translation supporting Indian regional languages using Google Speech Recognition and gTTS",
+            "ML Crop Recommendation: Scikit-learn based prediction model analyzing soil nutrients and climate data to recommend optimal crops",
+            "Government Scheme Integration: Automated PM-Kisan status tracking and eligibility checking through web scraping",
+            "Educational Resource Hub: Selenium-powered scraper fetching agricultural policies, circulars, and notices from NMSA and PMKSY portals",
+            "Document Processing: PDF analysis system for handling official agricultural reports and government notices",
+
+        ]
     }
+
 ];
 
 const ProjectCard = ({ project, setSelectedProject }) => {
@@ -121,7 +210,7 @@ const ProjectCard = ({ project, setSelectedProject }) => {
             ref={cardRef}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: false, margin: "-50px" }}
             animate={{
                 rotateX: rotate.x,
                 rotateY: rotate.y,
@@ -144,6 +233,16 @@ const ProjectCard = ({ project, setSelectedProject }) => {
             className="group relative bg-[#0a0a16] border border-white/10 rounded-2xl overflow-hidden shadow-xl hover:shadow-cyan-500/40 transition-shadow duration-300 flex flex-col h-full cursor-pointer"
         >
             <div className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-15 transition-opacity duration-300`} />
+
+            {/* Image Preview */}
+            <div className="relative h-48 w-full overflow-hidden bg-black/40 border-b border-white/10">
+                <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-60 group-hover:opacity-100"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a16] to-transparent opacity-60" />
+            </div>
 
             <div className="p-8 flex flex-col h-full z-10" style={{ transform: "translateZ(30px)" }}>
                 <div className="flex justify-between items-start mb-6">
@@ -203,8 +302,16 @@ const Projects = () => {
 
     // Prevent body scroll when modal is open
     useEffect(() => {
+        const root = document.getElementById('root');
         if (selectedProject) {
             document.body.style.overflow = 'hidden';
+            // Force repaint and hide content behind modal
+            if (root) {
+                root.style.filter = 'blur(0px)'; // Force repaint
+                setTimeout(() => {
+                    root.style.filter = '';
+                }, 0);
+            }
         } else {
             document.body.style.overflow = 'unset';
         }
@@ -221,7 +328,7 @@ const Projects = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
@@ -238,8 +345,8 @@ const Projects = () => {
             </div>
 
             {/* Project Detail Modal */}
-            <AnimatePresence>
-                {selectedProject && (
+            {selectedProject && createPortal(
+                <AnimatePresence>
                     <>
                         {/* Backdrop */}
                         <motion.div
@@ -247,7 +354,18 @@ const Projects = () => {
                             animate={{ opacity: 1 }}
                             exit={{ opacity: 0 }}
                             onClick={() => setSelectedProject(null)}
-                            className="fixed inset-0 bg-black backdrop-blur-2xl z-50"
+                            className="fixed inset-0 bg-black z-[9998]"
+                            style={{
+                                position: 'fixed',
+                                top: 0,
+                                left: 0,
+                                right: 0,
+                                bottom: 0,
+                                backgroundColor: '#000000',
+                                zIndex: 9998,
+                                transform: 'translateZ(0)',
+                                willChange: 'opacity'
+                            }}
                         />
 
                         {/* Modal */}
@@ -256,7 +374,8 @@ const Projects = () => {
                             animate={{ opacity: 1, scale: 1, y: 0 }}
                             exit={{ opacity: 0, scale: 0.8, y: 100 }}
                             transition={{ type: "spring", damping: 25, stiffness: 300 }}
-                            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0a0a16] border border-white/20 rounded-3xl z-50 shadow-2xl"
+                            className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0a0a16] border border-white/20 rounded-3xl z-[9999] shadow-2xl"
+                            style={{ zIndex: 9999 }}
                         >
                             {/* Close Button */}
                             <button
@@ -369,8 +488,9 @@ const Projects = () => {
                             </div>
                         </motion.div>
                     </>
-                )}
-            </AnimatePresence>
+                </AnimatePresence>,
+                document.body
+            )}
         </section>
     );
 };

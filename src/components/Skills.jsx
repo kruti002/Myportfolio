@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import {
     SiReact, SiHtml5, SiCss3, SiJavascript, SiDjango, SiFlask, SiBootstrap, SiTailwindcss, SiCplusplus, SiPython,
     SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiPandas, SiNumpy, SiR,
-    SiGooglecloud, SiDocker, SiGit, SiGithub, SiFirebase, SiMongodb, SiMysql,SiMinio,
+    SiGooglecloud, SiDocker, SiGit, SiGithub, SiFirebase, SiMongodb, SiMysql, SiMinio,
     SiFigma, SiCanva, SiPostman
 } from "react-icons/si";
 import { FaJava, FaPenNib, FaRegCalendarAlt, FaPuzzlePiece, FaMicrosoft, FaClock, FaBrain, FaChartBar, FaCode, FaCloud, FaUsers, FaUserTie, FaLightbulb, FaAws, FaComments, FaCog } from "react-icons/fa";
@@ -105,7 +105,7 @@ const Skills = () => {
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false }}
                     className="text-center mb-16"
                 >
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
@@ -128,7 +128,7 @@ const Skills = () => {
                                 boxShadow: "0 20px 40px -10px rgba(0, 216, 255, 0.3)",
                                 transition: { duration: 0.2 }
                             }}
-                            viewport={{ once: true, margin: "-50px" }}
+                            viewport={{ once: false, margin: "-50px" }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="relative group bg-white/5 backdrop-blur-sm border border-white/10 p-4 md:p-8 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col cursor-default"
                         >
