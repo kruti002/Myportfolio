@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
-import logo from "../assets/logo.png";
+import logo from "../assets/Logo.png";
 
 
 const Navbar = () => {
