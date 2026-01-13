@@ -32,26 +32,17 @@ const Education = () => {
     return (
         <section id="education" className="w-full min-h-screen py-20 px-6 md:px-20 relative z-10 text-white flex flex-col justify-center">
             <div className="max-w-6xl mx-auto w-full">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
                         Education
                     </h2>
                     <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full" />
-                </motion.div>
+                </div>
 
                 <div className="space-y-8">
                     {educationData.map((edu, index) => (
-                        <motion.div
+                        <div
                             key={index}
-                            initial={{ opacity: 0, y: 30 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: false, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.2 }}
                             className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-3xl p-6 md:p-8 hover:bg-white/10 hover:border-cyan-500/30 transition-all duration-300 group"
                         >
                             <div className="flex flex-col md:flex-row gap-6 items-start">
@@ -117,7 +108,7 @@ const Education = () => {
                                     )}
                                 </div>
                             </div>
-                        </motion.div>
+                        </div>
                     ))}
                 </div>
             </div>

@@ -1,3 +1,4 @@
+
 import { motion } from "framer-motion";
 import krutiPic from "../assets/kruti_pic.png";
 import { lazy, Suspense } from "react";

@@ -63,13 +63,7 @@ const Contact = () => {
             <div className="max-w-6xl mx-auto w-full grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24">
 
                 {/* Left Side - Info & Project Card */}
-                <motion.div
-                    initial={{ opacity: 0, x: -50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.6 }}
-                    className="flex flex-col justify-center gap-10"
-                >
+                <div className="flex flex-col justify-center gap-10">
                     {/* Header with Signal Pulse & Connection Lines */}
                     <div className="relative isolate">
 
@@ -203,15 +197,10 @@ const Contact = () => {
                             </a>
                         ))}
                     </div>
-                </motion.div>
+                </div>
 
                 {/* Right Side - Form */}
-                <motion.div
-                    initial={{ opacity: 0, x: 50 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: false }}
-                    transition={{ duration: 0.6, delay: 0.2 }}
-                >
+                <div>
                     <form ref={formRef} onSubmit={handleSubmit} className="bg-[#0a0a16] border border-white/5 p-8 md:p-10 rounded-3xl shadow-2xl relative overflow-hidden group">
                         {/* Decorative Gradient Blob */}
                         <div className="absolute -top-20 -right-20 w-40 h-40 bg-purple-500/20 rounded-full blur-3xl pointer-events-none group-hover:bg-purple-500/30 transition-colors" />
@@ -271,7 +260,7 @@ const Contact = () => {
                             )}
                         </div>
                     </form>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

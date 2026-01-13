@@ -1,0 +1,137 @@
+.preloader-overlay {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #030308;
+    z-index: 10000;
+    overflow: hidden;
+}
+
+.terminal-box {
+    width: 90%;
+    max-width: 450px;
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5),
+        0 0 40px rgba(0, 216, 255, 0.1);
+    backdrop-filter: blur(10px);
+    overflow: hidden;
+    position: relative;
+    z-index: 20;
+}
+
+.terminal-header {
+    height: 36px;
+    background: rgba(45, 45, 65, 0.8);
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dots {
+    display: flex;
+    gap: 8px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.red {
+    background: #ff5f56;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #27c93f;
+}
+
+.terminal-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.5);
+    font-family: 'Inter', sans-serif;
+    pointer-events: none;
+}
+
+.terminal-content {
+    padding: 24px;
+    font-family: 'Fira Code', monospace;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #cdd6f4;
+}
+
+.prompt {
+    color: #89b4fa;
+    font-weight: 600;
+}
+
+.text {
+    letter-spacing: 0.5px;
+}
+
+.cursor {
+    color: #a6e3a1;
+    font-weight: bold;
+    animation: blink 0.8s step-end infinite;
+}
+
+@keyframes blink {
+
+    from,
+    to {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Matrix Background Styles */
+.matrix-background {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -20px;
+    color: #00d8ff;
+    white-space: nowrap;
+    user-select: none;
+    opacity: 0;
+    text-shadow: 0 0 12px rgba(0, 216, 255, 0.8), 0 0 5px rgba(0, 216, 255, 0.5);
+}
+
+/* Add a subtle scanline effect for that retro-modern feel */
+.preloader-overlay::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(18, 16, 16, 0) 50%,
+            rgba(0, 0, 0, 0.1) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 10;
+    opacity: 0.3;
+}

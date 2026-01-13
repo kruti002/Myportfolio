@@ -102,24 +102,17 @@ const Skills = () => {
     return (
         <section id="skills" className="w-full min-h-screen py-20 px-6 md:px-20 relative z-10 text-white flex flex-col justify-center">
             <div className="max-w-7xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: false }}
-                    className="text-center mb-16"
-                >
+                <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-green-400 mb-4">
                         Skills & Expertise
                     </h2>
                     <div className="h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto rounded-full" />
-                </motion.div>
+                </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-fr">
                     {skillCards.map((card, index) => (
                         <motion.div
                             key={index}
-                            initial={{ opacity: 0, y: 50, scale: 0.9 }}
-                            whileInView={{ opacity: 1, y: 0, scale: 1 }}
                             whileHover={{
                                 scale: 1.1,
                                 zIndex: 10,
@@ -128,8 +121,6 @@ const Skills = () => {
                                 boxShadow: "0 20px 40px -10px rgba(0, 216, 255, 0.3)",
                                 transition: { duration: 0.2 }
                             }}
-                            viewport={{ once: false, margin: "-50px" }}
-                            transition={{ duration: 0.5, delay: index * 0.1 }}
                             className="relative group bg-white/5 backdrop-blur-sm border border-white/10 p-4 md:p-8 rounded-3xl overflow-hidden transition-all duration-300 flex flex-col cursor-default"
                         >
                             {/* Decorative Corner Markers */}
