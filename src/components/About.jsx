@@ -353,7 +353,7 @@ const About = () => {
 
                                             {/* Bio Text */}
                                             <p className="text-[11px] text-gray-300 leading-5 mb-4 font-sans opacity-90">
-                                                I’m a software developer and machine learning enthusiast with hands-on experience building backend systems, web applications, and AI-powered cloud platforms. Currently pursuing my Master’s in Computer Science, I work across the stack—designing robust backend services, developing responsive web applications, and deploying scalable ML pipelines.
+                                                I’m a software developer and machine learning enthusiast with hands-on experience building backend systems, web applications, and AI-powered cloud platforms. Currently pursuing my Master’s in Computer Science, I work across the stack:designing robust backend services, developing responsive web applications, and deploying scalable ML pipelines.
                                             </p>
 
                                             {/* Stats Grid */}

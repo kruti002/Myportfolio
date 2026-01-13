@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaCode, FaTimes, FaBrain } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaTimes, FaBrain, FaFileAlt, FaAward } from "react-icons/fa";
 import { SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiFirebase, SiFastapi, SiGooglecloud, SiDocker, SiJavascript, SiGooglemaps, SiPostgresql, SiNumpy, SiPandas, SiHtml5, SiCss3, SiFlask, SiOpencv, SiKeras, SiFlutter, SiArduino, SiCplusplus } from "react-icons/si";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -72,7 +72,7 @@ const projects = [
     {
         title: "Intelligent Yoga Pose Analysis",
         shortDescription: "AI-driven real-time yoga posture recognition and correction system using MediaPipe and XAI for transparent feedback.",
-        fullDescription: "Developed a real-time yoga pose analysis system that identifies 33 body landmarks and classifies 82 different poses using a Random Forest model. The platform integrates Explainable AI (SHAP) to provide interpretable feedback, helping practitioners understand specific misalignments. Built with Python and MediaPipe, it offers immediate corrections to prevent injuries and improve training effectiveness. This work was published as a research paper focused on XAI-driven real-time analysis.",
+        fullDescription: "Developed a real-time yoga pose analysis system that identifies 33 body landmarks and classifies 82 different poses using a Random Forest model. The platform integrates Explainable UI (SHAP) to provide interpretable feedback, help practitioners understand specific misalignments. This core research has been published as a scientific paper, exploring the intersection of Computer Vision and Explainable AI for healthcare applications.",
         technologies: [
             { name: "Python", icon: SiPython },
             { name: "MediaPipe" },
@@ -81,26 +81,28 @@ const projects = [
             { name: "SHAP (XAI)", icon: FaBrain },
             { name: "React", icon: SiReact }
         ],
+        achievements: [
+            { type: "Research Paper", text: "Published Research Paper on XAI-driven real-time analysis", link: "https://kuey.net/index.php/kuey/article/view/7384" }
+        ],
         links: {
             github: "https://github.com/kruti002/RESEARCH_PAPER_1",
-            demo: "#"
+            demo: "https://kuey.net/index.php/kuey/article/view/7384"
         },
         color: "from-green-400 to-emerald-300",
         image: "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=500&fit=crop",
         features: [
             "Explainable AI (XAI): Integrates SHAP and LIME to provide transparent, human-readable feedback on pose accuracy",
             "Real-time keypoint detection for 33 body landmarks using MediaPipe and BlazePose",
-            "Pose classification across 82 categories using a high-accuracy Random Forest model trained on Yoga-82 dataset",
+            "Pose classification across 82 categories using a high-accuracy Random Forest model",
             "Transparent AI feedback using SHAP for interpretable correction suggestions",
             "Injury prevention through comparative analysis with ideal pose datasets",
             "Actionable real-time insights for virtual yoga training and self-practice"
         ]
     },
     {
-
         title: "Pipeline Traversing Robot",
         shortDescription: "Autonomous robotic system for multi-axis pipeline inspection with gas leak detection and obstacle avoidance.",
-        fullDescription: "Designed and built an innovative robot capable of traversing pipelines horizontally and vertically using a unique combination of castor wheels and strong magnetic adhesion. This hardware-integrated system is engineered for industrial inspection, featuring real-time gas leakage detection and environmental monitoring. The robot uses ultrasonic proximity sensors and onboard imaging for autonomous obstacle avoidance, all while communicating data to a custom-built Flutter mobile application for remote monitoring and control.",
+        fullDescription: "Designed and built an innovative robot capable of traversing pipelines horizontally and vertically using a unique combination of castor wheels and strong magnetic adhesion. This hardware-integrated system is engineered for industrial inspection, featuring real-time gas leakage detection and environmental monitoring. This mechanism and design are backed by a published Indian Utility Patent and an ongoing Design Patent.",
         technologies: [
             { name: "Arduino/C++", icon: SiArduino },
             { name: "Flutter", icon: SiFlutter },
@@ -108,6 +110,20 @@ const projects = [
             { name: "C++", icon: SiCplusplus },
             { name: "Firebase", icon: SiFirebase },
             { name: "Hardware Integration" }
+        ],
+        achievements: [
+            {
+                type: "Utility Patent",
+                text: "Appl. No: 202521045231 (India)",
+                status: "Published",
+                link: "https://iprsearch.ipindia.gov.in/PublicSearch/PublicationSearch/ApplicationStatus"
+            },
+            {
+                type: "Design Patent",
+                text: "Appl. No: 458534-001",
+                status: "Ongoing",
+                link: "https://search.ipindia.gov.in/DesignApplicationStatus/"
+            }
         ],
         links: {
             github: "https://github.com/kruti002/gas_leakage_detector_fyp",
@@ -118,8 +134,8 @@ const projects = [
         features: [
             "Vertical/Horizontal Traversal: Engineered magnetic adhesion and castor wheel mechanisms for multi-surface mobility",
             "Real-time Leak Detection: Integrated MQ-series gas sensors and DHT sensors for environmental safety monitoring",
-            "Autonomous Navigation: Ultrasonic proximity sensors and imaging for real-time obstacle avoidance and visual inspection",
-            "Mobile App Integration: Flutter-based mobile application for real-time data visualization and manual override control",
+            "Autonomous Navigation: Ultrasonic proximity sensors and imaging for real-time obstacle avoidance",
+            "Mobile App Integration: Flutter-based mobile application for real-time data visualization",
             "System Monitoring: Integrated temperature and humidity logging via hardware-software handoff"
         ]
     },
@@ -266,10 +282,20 @@ const ProjectCard = ({ project, setSelectedProject }) => {
                     </div>
                 </div>
 
-                <div className="flex items-center justify-between mb-3">
+                <div className="flex flex-col mb-3">
                     <h3 className="text-2xl font-bold group-hover:text-cyan-300 transition-colors">
                         {project.title}
                     </h3>
+                    {project.achievements && (
+                        <div className="flex flex-wrap gap-2 mt-2">
+                            {project.achievements.map((achievement, idx) => (
+                                <span key={idx} className="flex items-center gap-1.5 text-[10px] font-bold px-2 py-0.5 rounded-md bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 uppercase tracking-wider">
+                                    {achievement.type.includes("Paper") ? <FaFileAlt /> : <FaAward />}
+                                    {achievement.type}
+                                </span>
+                            ))}
+                        </div>
+                    )}
                 </div>
 
                 <p className="text-gray-400 mb-6 flex-grow leading-relaxed">
@@ -369,14 +395,6 @@ const Projects = () => {
                             className="fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[90%] max-w-4xl max-h-[90vh] overflow-y-auto bg-[#0a0a16] border border-white/20 rounded-3xl z-[9999] shadow-2xl"
                             style={{ zIndex: 9999 }}
                         >
-                            {/* Close Button */}
-                            <button
-                                onClick={() => setSelectedProject(null)}
-                                className="absolute top-6 right-6 z-10 text-gray-400 hover:text-white transition-colors text-2xl bg-black/50 rounded-full p-2 backdrop-blur-sm"
-                            >
-                                <FaTimes />
-                            </button>
-
                             {/* Project Image Section */}
                             <div className={`relative w-full ${selectedProject.isMobile ? 'min-h-[400px] md:min-h-[600px]' : 'min-h-[300px] md:min-h-[450px]'} bg-[#050505] flex items-center justify-center overflow-hidden border-b border-white/10`}>
                                 {/* Subtle background glow */}
@@ -405,8 +423,6 @@ const Projects = () => {
                             <div className="p-8 md:p-12">
                                 {/* Title and Description */}
                                 <div className="mb-8">
-
-
                                     <div className="flex items-center justify-between mb-8">
                                         <h2 className="text-3xl md:text-4xl font-bold text-white">
                                             {selectedProject.title}
@@ -432,6 +448,47 @@ const Projects = () => {
                                             </motion.span>
                                         ))}
                                     </div>
+                                    {/* Achievements Section */}
+                                    {selectedProject.achievements && (
+                                        <div className="mb-8 p-6 rounded-2xl bg-indigo-500/5 border border-indigo-500/20 shadow-[0_0_20px_rgba(99,102,241,0.05)]">
+                                            <h3 className="text-xl font-bold text-indigo-400 mb-4 flex items-center gap-2">
+                                                <FaAward className="text-2xl" />
+                                                Recognition & Achievements
+                                            </h3>
+                                            <div className="space-y-4">
+                                                {selectedProject.achievements.map((achievement, idx) => (
+                                                    <div key={idx} className="flex items-start gap-4">
+                                                        <div className="p-2 rounded-lg bg-indigo-500/10 text-indigo-400">
+                                                            {achievement.type.includes("Paper") ? <FaFileAlt /> : <FaAward />}
+                                                        </div>
+                                                        <div>
+                                                            <div className="flex items-center gap-2">
+                                                                <h4 className="font-bold text-white mb-1">{achievement.type}</h4>
+                                                                {achievement.status && (
+                                                                    <span className="text-[10px] px-2 py-0.5 rounded-full bg-green-500/10 text-green-400 border border-green-500/20">
+                                                                        {achievement.status}
+                                                                    </span>
+                                                                )}
+                                                            </div>
+                                                            <p className="text-gray-400 text-sm leading-relaxed mb-2">
+                                                                {achievement.text}
+                                                            </p>
+                                                            {achievement.link && (
+                                                                <a
+                                                                    href={achievement.link}
+                                                                    target="_blank"
+                                                                    rel="noopener noreferrer"
+                                                                    className="text-indigo-400 text-xs font-semibold hover:underline flex items-center gap-1"
+                                                                >
+                                                                    View Here <FaExternalLinkAlt className="text-[10px]" />
+                                                                </a>
+                                                            )}
+                                                        </div>
+                                                    </div>
+                                                ))}
+                                            </div>
+                                        </div>
+                                    )}
                                 </div>
 
                                 {/* Key Features */}
@@ -478,12 +535,19 @@ const Projects = () => {
                                     </motion.a>
                                 </div>
                             </div>
+                            {/* Close Button - Moved to bottom of Container for layering */}
+                            <button
+                                onClick={() => setSelectedProject(null)}
+                                className="absolute top-4 right-4 md:top-6 md:right-6 z-[100] text-white/70 hover:text-white transition-all bg-black/40 hover:bg-black/60 backdrop-blur-md rounded-full p-3 border border-white/10 shadow-xl"
+                            >
+                                <FaTimes className="text-xl md:text-2xl" />
+                            </button>
                         </motion.div>
                     </>
                 </AnimatePresence>,
                 document.body
             )}
-        </section>
+        </section >
     );
 };
 
