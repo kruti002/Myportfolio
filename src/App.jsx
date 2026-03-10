@@ -1,9 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Home from './sections/Home';
 import Background from './components/Background';
 import About from './components/About';
+import ResumeSection from './components/ResumeSection';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -15,6 +17,26 @@ import PreLoader from './components/PreLoader';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const location = useLocation();
+
+  // Handle smooth scrolling for hash links seamlessly
+  useEffect(() => {
+    if (!loading) {
+      if (location.hash) {
+        // Slight delay ensures the DOM is fully rendered before trying to scroll
+        setTimeout(() => {
+          const id = location.hash.replace('#', '');
+          const element = document.getElementById(id);
+          if (element) {
+            element.scrollIntoView({ behavior: 'smooth' });
+          }
+        }, 100);
+      } else {
+        // If no hash, scroll to top
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      }
+    }
+  }, [location, loading]);
 
   return (
     <div className="relative min-h-screen text-white">
@@ -31,14 +53,21 @@ function App() {
         >
           <Background />
           <Navbar />
-          <Home />
-          <About />
-          <Education />
-          <Skills />
-          <Projects />
-          <Experience />
-          <Achievements />
-          <Contact />
+          <Routes>
+            <Route path="/" element={
+              <>
+                <Home />
+                <About />
+                <Education />
+                <Skills />
+                <Projects />
+                <Experience />
+                <Achievements />
+                <Contact />
+              </>
+            } />
+            <Route path="/resume" element={<ResumeSection />} />
+          </Routes>
           <Footer />
         </motion.div>
       )}

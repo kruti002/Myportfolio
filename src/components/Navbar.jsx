@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
 import logo from "../assets/Logo.png";
@@ -42,8 +43,25 @@ const Navbar = () => {
 
       {/* Right Side Actions */}
       <div className="flex items-center gap-6">
-        <div className="hidden md:block">
-          <a href="#contact">
+        <div className="hidden md:flex items-center gap-4">
+          <Link to="/resume">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="
+      px-6 py-2 rounded-full
+      bg-transparent
+      border border-cyan-400
+      text-cyan-400 font-semibold
+      shadow-[0_0_10px_rgba(0,216,255,0.2)]
+      hover:bg-cyan-400/10
+      transition-all
+      "
+            >
+              Resume
+            </motion.button>
+          </Link>
+          <Link to="/#contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
@@ -60,7 +78,7 @@ const Navbar = () => {
             >
               Reach Out
             </motion.button>
-          </a>
+          </Link>
         </div>
 
         {/* Hamburger Menu Toggle - Visible on All Screens */}
@@ -97,20 +115,20 @@ const Navbar = () => {
               </div>
 
               <div className="flex flex-col gap-6 mt-10">
-                {["Home", "About", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
-                  <a
+                {["Home", "About", "Resume", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
+                  <Link
                     key={item}
-                    href={`#${item.toLowerCase().replace(" ", "-")}`}
+                    to={item === "Resume" ? "/resume" : `/${item === "Home" ? "" : "#" + item.toLowerCase().replace(" ", "-")}`}
                     onClick={toggleMenu}
                     className="text-gray-300 hover:text-white hover:text-cyan-400 text-lg font-medium tracking-wide transition-colors"
                   >
                     {item}
-                  </a>
+                  </Link>
                 ))}
 
-                <a href="#contact" onClick={toggleMenu} className="px-6 py-2 rounded-full bg-gradient-to-r from-[#ff007f] to-[#ff007f]/80 text-white font-semibold mt-4 text-center">
+                <Link to="/#contact" onClick={toggleMenu} className="px-6 py-2 rounded-full bg-gradient-to-r from-[#ff007f] to-[#ff007f]/80 text-white font-semibold mt-4 text-center">
                   Reach Out
-                </a>
+                </Link>
               </div>
             </motion.div>
           </>
