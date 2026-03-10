@@ -16,7 +16,13 @@ import Footer from './components/Footer';
 import PreLoader from './components/PreLoader';
 
 function App() {
-  const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(() => {
+    // If the user navigates directly to the resume page, skip the loading screen
+    if (window.location.pathname === '/resume') {
+      return false;
+    }
+    return true;
+  });
   const location = useLocation();
 
   // Handle smooth scrolling for hash links seamlessly
