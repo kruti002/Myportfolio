@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
-import { FaGithub, FaLinkedin, FaBars, FaTimes } from 'react-icons/fa';
+import { FaGithub, FaLinkedin, FaBars, FaTimes, FaFigma } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
 import logo from "../assets/Logo.png";
 
@@ -44,37 +44,33 @@ const Navbar = () => {
       {/* Right Side Actions */}
       <div className="flex items-center gap-6">
         <div className="hidden md:flex items-center gap-4">
+          <Link to="/design" title="Design Portfolio">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="flex items-center gap-2 px-5 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium hover:text-purple-400 hover:border-purple-400/50 hover:bg-purple-400/10 transition-all backdrop-blur-md"
+            >
+              <FaFigma className="text-lg" /> <span>Design</span>
+            </motion.button>
+          </Link>
           <Link to="/resume">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="
-      px-6 py-2 rounded-full
-      bg-transparent
-      border border-cyan-400
-      text-cyan-400 font-semibold
-      shadow-[0_0_10px_rgba(0,216,255,0.2)]
-      hover:bg-cyan-400/10
-      transition-all
-      "
+              className="px-5 py-2 rounded-full bg-white/5 border border-white/10 text-gray-300 font-medium hover:text-cyan-400 hover:border-cyan-400/50 hover:bg-cyan-400/10 transition-all backdrop-blur-md"
             >
               Resume
             </motion.button>
           </Link>
+
+          {/* Subtle Divider */}
+          <div className="w-px h-6 bg-white/20 mx-1"></div>
+
           <Link to="/#contact">
             <motion.button
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="
-      px-6 py-2 rounded-full
-      bg-black/40
-      border border-[#00d8ff]
-      text-[#00d8ff] font-semibold
-      shadow-[0_0_15px_rgba(0,216,255,0.5)]
-      hover:bg-[#00d8ff]
-      hover:text-black
-      transition-all
-      "
+              className="px-6 py-2 rounded-full bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-semibold shadow-[0_0_15px_rgba(6,182,212,0.4)] hover:shadow-[0_0_25px_rgba(6,182,212,0.6)] transition-all"
             >
               Reach Out
             </motion.button>
@@ -115,10 +111,10 @@ const Navbar = () => {
               </div>
 
               <div className="flex flex-col gap-6 mt-10">
-                {["Home", "About", "Resume", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
+                {["Home", "About", "Design", "Resume", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
                   <Link
                     key={item}
-                    to={item === "Resume" ? "/resume" : `/${item === "Home" ? "" : "#" + item.toLowerCase().replace(" ", "-")}`}
+                    to={(item === "Resume" || item === "Design") ? `/${item.toLowerCase()}` : `/${item === "Home" ? "" : "#" + item.toLowerCase().replace(" ", "-")}`}
                     onClick={toggleMenu}
                     className="text-gray-300 hover:text-white hover:text-cyan-400 text-lg font-medium tracking-wide transition-colors"
                   >
@@ -135,7 +131,7 @@ const Navbar = () => {
         )}
       </AnimatePresence>
 
-    </nav>
+    </nav >
   );
 };
 

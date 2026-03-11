@@ -17,7 +17,7 @@ const Footer = () => {
                     className="footer-text"
                 >
                     © {currentYear} <span className="footer-name">Kruti Shah</span>.
-                    Built with <span className="footer-tech">React</span>,i  and <span className="footer-tech">Framer Motion</span>
+                    Built with <span className="footer-tech">React</span> and <span className="footer-tech">Framer Motion</span>
                 </motion.p>
 
                 <motion.div

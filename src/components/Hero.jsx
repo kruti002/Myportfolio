@@ -1,6 +1,7 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaFigma } from "react-icons/fa";
 import { SiX } from "react-icons/si";
+import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import avatarImg from "../assets/avator.png";
 import ResumePdf from "../assets/Resume.pdf";
@@ -84,6 +85,7 @@ const Hero = () => {
                     <a href="https://x.com/krutishah957" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><SiX /></a>
                     <a href="https://www.linkedin.com/in/kruti-shah-5500b4225/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaLinkedin /></a>
                     <a href="https://github.com/kruti002" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors"><FaGithub /></a>
+                    <Link to="/design" title="Design Portfolio" className="hover:text-purple-400 transition-colors"><FaFigma /></Link>
                 </motion.div>
             </div>
 

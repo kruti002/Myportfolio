@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaPaperPlane, FaLinkedin, FaGithub, FaTwitter, FaCopy, FaCheck } from "react-icons/fa";
+import { FaPaperPlane, FaLinkedin, FaGithub, FaTwitter, FaCopy, FaCheck, FaFigma } from "react-icons/fa";
 import { useRef, useState } from "react";
 import emailjs from '@emailjs/browser';
 
@@ -184,7 +184,8 @@ const Contact = () => {
                         {[
                             { icon: FaGithub, href: "https://github.com/kruti002" },
                             { icon: FaLinkedin, href: "https://www.linkedin.com/in/kruti-shah-5500b4225/" },
-                            { icon: FaTwitter, href: "https://x.com/krutishah957" }
+                            { icon: FaTwitter, href: "https://x.com/krutishah957" },
+                            { icon: FaFigma, href: "https://high-proud-10434963.figma.site" }
                         ].map((social, index) => (
                             <a
                                 key={index}

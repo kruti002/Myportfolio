@@ -6,6 +6,7 @@ import Home from './sections/Home';
 import Background from './components/Background';
 import About from './components/About';
 import ResumeSection from './components/ResumeSection';
+import DesignPortfolio from './components/DesignPortfolio';
 import Education from './components/Education';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
@@ -17,8 +18,8 @@ import PreLoader from './components/PreLoader';
 
 function App() {
   const [loading, setLoading] = useState(() => {
-    // If the user navigates directly to the resume page, skip the loading screen
-    if (window.location.pathname === '/resume') {
+    // If the user navigates directly to the resume or design page, skip the loading screen
+    if (window.location.pathname === '/resume' || window.location.pathname === '/design') {
       return false;
     }
     return true;
@@ -73,6 +74,7 @@ function App() {
               </>
             } />
             <Route path="/resume" element={<ResumeSection />} />
+            <Route path="/design" element={<DesignPortfolio />} />
           </Routes>
           <Footer />
         </motion.div>

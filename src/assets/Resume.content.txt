@@ -1,0 +1,62 @@
+Kruti Shah
+Colorado,USA 80301
+ +1 (720) 731-3506 #             shahkruti957@gmail.comïkrutishah§krutishah       krutishah.netlify.app
+Education
+University of Colorado Boulder                                                                         Boulder, CO
+Master of Science in Computer Science, CGPA: 3.58/4.0                                                    Aug 2025 – May 2027
+Dwarkadas J. Sanghvi College of Engineering                                                                Mumbai, India
+B.Tech in Computer Engineering with Honors in Intelligent Computing, CGPA: 9.05/10.0                     Aug 2021 – May 2025
+Skills
+Languages/Frameworks: Python, Java, C, C++, JavaScript, SQL, R, HTML, CSS, FastAPI, Flask, React.js, Tailwind, Bootstrap
+Machine Learning:       TensorFlow, PyTorch, scikit-learn, NumPy, Pandas, OpenCV, NLP
+Databases/Tools:         MySQL, PostgreSQL, MongoDB, Firebase, Git, GitHub, Docker, Kubernetes, AWS, GCP, Power BI
+Coursework:             Data Structures, Software Engineering, Data Warehousing and Mining, Natural Language Processing,
+DBMS, Operating Systems, Design and Analysis of Algorithms, Artificial Intelligence
+Experience
+AI Intern                                                                                      Aug 2023 – Sep 2023
+Assessli, Remote
+• Built an automated student assessment system using KNN-based response classification and FPDF report generation to evaluate
+answer similarity with reference solutions, reducing manual grading effort by 40% across 40+ partner schools.
+• Refactored a Deep Reinforcement Learning based recommendation system to generate personalized developmental activities
+for children using longitudinal learning data, improving model performance by 18%.
+Python Intern                                                                                  Jul 2023 – Sep 2023
+Emkay Global Financial Services Limited, Mumbai, India
+• Architected a real-time Python alerting system to detect algorithmic orders missing identifiers, processing inputs every 15
+seconds and reducing manual monitoring workload by 30% for trading operations teams.
+• Automated a Python analytics pipeline to compute order to trade ratios from compressed transaction logs and generate cus-
+tomized email reports, reducing manual compliance analysis time by 50%.
+• Analyzed Infosys stock price movements around earnings announcements using an LSTM based time series model, identifying
+patterns that predicted 5 to 7% pre-earnings increases and 2 to 3% post-earnings corrections.
+Projects
+Agentic AI Cloud Security Analytics Platform§                                                    February 2026 – Present
+• Orchestrated a hybrid cloud security analytics pipeline processing LANL Windows authentication logs and synthetic cloud
+telemetry stored in AWS S3.
+• Trained a deep autoencoder anomaly detection model to learn baseline authentication behavior and detect abnormal login
+patterns and potential lateral movement achieving ROC–AUC of 0.83.
+• Modeling user machine authentication events as a bipartite graph and developing a LangGraph based AI agent to generate
+SOC incident summaries, assign severity scores, and automate response workflows.
+BoulderMove: Smart Multimodal Trip Planning System§                                 November 2025 – December 2025
+• Built a cloud-native multimodal routing system combining GTFS/RAPTOR transit algorithms and OSMnx pedestrian graph
+routing with a React and FastAPI architecture.
+• Designed a Dockerized ML inference service using XGBoost to predict transit on-time arrival probability with 87% accuracy,
+deployed on Google Cloud Run.
+• Deployed scalable GCP infrastructure (Compute Engine, Cloud SQL, Cloud Storage, Cloud Build, Artifact Registry)and inte-
+grated Gemini + OpenWeather APIs for weather-aware routing and Ticketmaster API to surface nearby congestion events.
+Style Sync: AI Driven Fashion Personalization Platform§                                         June 2024 – August 2024
+• Engineered a 3D virtual try-on pipeline integrating DRM, MTM, and TFM models with VGG19 feature extraction to generate
+realistic clothing overlays across multiple pose variations and maintain texture fidelity.
+• Implemented a skin-tone based apparel recommendation system using MTCNN for face detection, Dlib facial landmark
+extraction, and OpenCV image processing, achieving 90% skin tone classification accuracy for personalized color matching.
+• Constructed a trend-aware fashion recommendation module using ResNet50 feature embeddings and a community voting
+mechanism, dynamically updating clothing rankings based on user preference signals.
+Publications & Patents
+•Explainable AI for Yoga Pose Detection and Correction. Educational Administration: Theory and Practice, 30(5), May 2024.
+•EcoBot: Pest Detection Alert System—Safeguarding Against Infestations. Book chapter inTechnologiesforEnergy, Agriculture,
+and Healthcare (1st Edition), July 2026.
+• Utility Patent Published: HazardScout: IoT Enabled Gas Leakage Detection & Emergency Response Robot (No: 202521045231).
+• Design Patent Filed: HazardScout Gas Detection Robot (Application No. 458534-001, under examination at IP India).
+Achievements & Co-Curricular Activities
+• Advanced to the pre-finale round (Top 70 of 29,000+ teams) in the National Myntra HackerRamp WeForShe 2024 hackathon.
+• Coordinated the Internship Fair as OC Member at DJ Sanghvi College, managing company onboarding and student engagement.
+• Selected among the top 60 students across all departments for the JPMorgan Chase College to Corporate Program (2022–2024).
+----------------Page (0) Break----------------
