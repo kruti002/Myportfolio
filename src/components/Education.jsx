@@ -10,7 +10,17 @@ const educationData = [
         duration: "Aug 2025 – May 2027",
         cgpa: "3.767/4.0",
         logo: cuBoulderLogo,
-        coursework: ["Data Structures and Algorithms", "Software Engineering", "Deep Learning", "Operating Systems", "Natural Language Processing", "Distributed Systems"],
+        coursework: [
+            "Datacenter Scale Computing",
+            "Big Data Architecture",
+            "Neural Nets and Deep Learning",
+            "Natural Language Processing",
+            "Design and Analysis of Algorithms",
+            "Data Science Team",
+            "Intro to CS MS Research",
+            "Computer Science Colloquium",
+            "Intro to Computing"
+        ],
         highlights: [
             "Pursuing Master of Science in Computer Science with a focus on Agentic AI, Cloud-Native Systems, and Distributed Infrastructure."
         ]

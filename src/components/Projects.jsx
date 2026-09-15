@@ -8,6 +8,7 @@ import {
 } from "react-icons/si";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
+import chronobaseImg from "../assets/chronobase.png";
 import bouldermoveImg from "../assets/bouldermove.png";
 import stylesyncImg from "../assets/stylesync.png";
 import patentImg from "../assets/patent.jpg";
@@ -45,7 +46,7 @@ const projects = [
             demo: "https://github.com/kruti002/ChronoBase"
         },
         color: "from-blue-600 via-indigo-600 to-cyan-500",
-        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
+        image: chronobaseImg,
         features: [
             "Git-like database semantics: Point-in-time snapshots, branching, and seamless rollback of states",
             "Infrastructure as Code: Automated AWS stack (S3, SQS, EventBridge, DocumentDB) using Terraform",
@@ -325,9 +326,9 @@ const projects = [
     {
         title: "Hack-a-thletes LOC: Supply Chain Hub",
         category: "Full Stack & Mobile",
-        badge: "Logithon Top 6 Finalist",
-        shortDescription: "Logistics tracking and supply chain optimization platform created for Logithon Hackathon.",
-        fullDescription: "Developed for the Logithon Hackathon (Top 6 out of 200+ teams by Softlink Global), this platform streamlines consignment logistics, inventory routing, and delivery milestone notifications with an intuitive, responsive management portal.",
+        badge: "LOC Hackathon",
+        shortDescription: "Logistics tracking and supply chain management platform created for the LOC Hackathon.",
+        fullDescription: "Developed for the LOC (Lines of Code) Hackathon, this platform streamlines consignment logistics, inventory routing, and delivery milestone notifications with an intuitive, responsive management portal.",
         technologies: [
             { name: "JavaScript", icon: SiJavascript },
             { name: "HTML5", icon: SiHtml5 },
@@ -336,7 +337,7 @@ const projects = [
             { name: "Node.js", icon: SiNodedotjs }
         ],
         achievements: [
-            { type: "Hackathon Finalist", text: "Top 6 out of 200+ teams in Logithon Hackathon (Softlink Global)" }
+            { type: "Hackathon", text: "LOC (Lines of Code) Hackathon Project" }
         ],
         links: {
             github: "https://github.com/kruti002/Hack-a-thletes_LOC1",
@@ -348,7 +349,7 @@ const projects = [
             "Consignment and shipment tracking with milestone status visualization",
             "Automated delivery dispatch schedules and inventory management",
             "Responsive logistics operations interface built for desktop and mobile",
-            "Softlink Global Logithon Hackathon top-tier project"
+            "Engineered and presented at the LOC Hackathon"
         ]
     }
 ];

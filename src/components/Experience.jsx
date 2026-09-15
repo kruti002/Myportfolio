@@ -14,17 +14,6 @@ const experiences = [
         ]
     },
     {
-        title: "Agentic AI Intern - Cloud Security",
-        company: "Cloud Security & AI Analytics",
-        period: "Feb 2026 – Apr 2026",
-        type: "ai",
-        highlights: [
-            "Orchestrated a hybrid cloud security analytics pipeline processing LANL Windows authentication logs and synthetic cloud telemetry stored in AWS S3.",
-            "Trained a deep autoencoder anomaly detection model in PyTorch to learn baseline authentication behavior and detect abnormal login patterns and potential lateral movement (ROC–AUC: 0.83).",
-            "Modeled user-machine authentication events as a bipartite graph and engineered a LangGraph-based AI agent to generate SOC incident summaries, assign severity scores, and automate response workflows."
-        ]
-    },
-    {
         title: "AI Intern",
         company: "Assessli, Remote",
         period: "Aug 2023 – Sep 2023",
