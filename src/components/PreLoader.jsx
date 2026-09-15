@@ -53,7 +53,7 @@ const PreLoader = ({ setLoading }) => {
     const [text, setText] = useState("");
     const [isDeleting, setIsDeleting] = useState(false);
     const [loopNum, setLoopNum] = useState(0);
-    const [typingSpeed, setTypingSpeed] = useState(100);
+    const [typingSpeed, setTypingSpeed] = useState(50);
 
     useEffect(() => {
         document.body.style.overflow = 'hidden';
@@ -78,22 +78,22 @@ const PreLoader = ({ setLoading }) => {
         setText(updatedText);
 
         if (isDeleting) {
-            setTypingSpeed(20);
+            setTypingSpeed(15);
         }
 
         if (!isDeleting && updatedText === fullText) {
             if (loopNum === lines.length - 1) {
                 setTimeout(() => {
                     setLoading(false);
-                }, 1000);
+                }, 400);
                 return;
             }
             setIsDeleting(true);
-            setTypingSpeed(600);
+            setTypingSpeed(280);
         } else if (isDeleting && updatedText === '') {
             setIsDeleting(false);
             setLoopNum(loopNum + 1);
-            setTypingSpeed(50);
+            setTypingSpeed(30);
         }
     };
 
@@ -103,9 +103,9 @@ const PreLoader = ({ setLoading }) => {
             initial={{ opacity: 1 }}
             exit={{
                 opacity: 0,
-                scale: 1.1,
-                filter: "blur(10px)",
-                transition: { duration: 0.8, ease: "circOut" }
+                scale: 1.05,
+                filter: "blur(8px)",
+                transition: { duration: 0.5, ease: "easeInOut" }
             }}
         >
             <MatrixBackground />
