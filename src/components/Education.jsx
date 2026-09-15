@@ -5,25 +5,30 @@ import djSanghviLogo from "../assets/dj_sanghvi_logo.png";
 const educationData = [
     {
         institution: "University of Colorado Boulder",
+        location: "Boulder, CO",
         degree: "Master of Science in Computer Science",
         duration: "Aug 2025 – May 2027",
-        cgpa: "3.58/4.0",
+        cgpa: "3.767/4.0",
         logo: cuBoulderLogo,
-        coursework: ["Natural Language Processing Systems", "Data Centric Scale Computing", "Design and Analysis of Algorithms"],
-        highlights: []
+        coursework: ["Data Structures and Algorithms", "Software Engineering", "Deep Learning", "Operating Systems", "Natural Language Processing", "Distributed Systems"],
+        highlights: [
+            "Pursuing Master of Science in Computer Science with a focus on Agentic AI, Cloud-Native Systems, and Distributed Infrastructure."
+        ]
     },
     {
         institution: "Dwarkadas J. Sanghvi College of Engineering",
-        degree: "Bachelor of Technology in Computer Engineering with Honors in Intelligent Computing",
-        duration: "2021 – 2025",
+        location: "Mumbai, India",
+        degree: "B.Tech in Computer Engineering with Honors in Intelligent Computing",
+        duration: "Aug 2021 – May 2025",
         cgpa: "9.05/10.0",
         logo: djSanghviLogo,
-        coursework: [],
+        coursework: ["Data Structures", "Software Engineering", "Data Warehousing and Mining", "Natural Language Processing", "DBMS", "Operating Systems", "Design and Analysis of Algorithms", "Artificial Intelligence"],
         highlights: [
-            "Published 2 research papers",
-            "Utility Patent: Published | Design Patent: Under review",
-            "Participated in multiple hackathons, including Myntra HackerRamp",
-            "OC Member, Internship Fair at Dwarkadas J. Sanghvi College of Engineering"
+            "Published 2 research papers & book chapter",
+            "Utility Patent: Published (HazardScout) | Design Patent: Under examination",
+            "Advanced to pre-finale round (Top 70 of 29,000+ teams) in Myntra HackerRamp WeForShe 2024",
+            "OC Member, Internship Fair at Dwarkadas J. Sanghvi College of Engineering",
+            "Selected for JPMorgan Chase College to Corporate Program (Top 60 students)"
         ]
     }
 ];
@@ -66,11 +71,17 @@ const Education = () => {
                                         {edu.degree}
                                     </p>
                                     <div className="flex flex-wrap gap-4 text-sm text-gray-400 mb-4">
+                                        {edu.location && (
+                                            <span className="flex items-center gap-2">
+                                                <span className="w-2 h-2 bg-emerald-400 rounded-full"></span>
+                                                {edu.location}
+                                            </span>
+                                        )}
                                         <span className="flex items-center gap-2">
                                             <span className="w-2 h-2 bg-cyan-400 rounded-full"></span>
                                             {edu.duration}
                                         </span>
-                                        <span className="flex items-center gap-2">
+                                        <span className="flex items-center gap-2 font-semibold text-cyan-300 bg-cyan-500/10 px-2.5 py-0.5 rounded-full border border-cyan-500/20">
                                             <span className="w-2 h-2 bg-purple-400 rounded-full"></span>
                                             CGPA: {edu.cgpa}
                                         </span>

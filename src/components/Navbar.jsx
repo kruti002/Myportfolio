@@ -111,7 +111,7 @@ const Navbar = () => {
               </div>
 
               <div className="flex flex-col gap-6 mt-10">
-                {["Home", "About", "Design", "Resume", "Education", "Skills", "Projects", "Experience", "Achievements", "Contact"].map((item) => (
+                {["Home", "About", "Design", "Resume", "Education", "Skills", "Projects", "Research", "Experience", "Achievements", "Contact"].map((item) => (
                   <Link
                     key={item}
                     to={(item === "Resume" || item === "Design") ? `/${item.toLowerCase()}` : `/${item === "Home" ? "" : "#" + item.toLowerCase().replace(" ", "-")}`}

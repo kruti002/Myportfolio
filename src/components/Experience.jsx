@@ -1,26 +1,48 @@
 import { motion } from "framer-motion";
-import { FaBriefcase, FaCode } from "react-icons/fa";
+import { FaBriefcase, FaCode, FaRobot } from "react-icons/fa";
 
 const experiences = [
     {
-        title: "AI Intern",
-        company: "One Oath Foundation",
-        period: "Aug 2023 - Sep 2023",
-        type: "work",
+        title: "Agentic AI Intern",
+        company: "eClerx Services Limited, Remote",
+        period: "May 2026 – July 2026",
+        type: "ai",
         highlights: [
-            "Automated an assessment system using KNN for response classification and FPDF for instant report generation",
-            "Built a ML-based recommendation system using Deep Reinforcement Learning to suggest personalized developmental steps for children, improving accuracy by 12%"
+            "Shipped an 8 node agentic AI system using LangGraph, Claude, and RAG to automate financial analysis for a client spanning 14 companies, combining structured extraction, semantic retrieval, and LLM reasoning to identify financial trigger years.",
+            "Designed an end to end analysis workflow across multilingual document parsing, metric extraction, peer benchmarking, ratio analysis, ROE decomposition, and evidence backed risk assessment, turning annual reports into automated investment reports.",
+            "Iterated with client stakeholders, translating requirements and feedback into extraction, retrieval, and reasoning improvements."
+        ]
+    },
+    {
+        title: "Agentic AI Intern - Cloud Security",
+        company: "Cloud Security & AI Analytics",
+        period: "Feb 2026 – Apr 2026",
+        type: "ai",
+        highlights: [
+            "Orchestrated a hybrid cloud security analytics pipeline processing LANL Windows authentication logs and synthetic cloud telemetry stored in AWS S3.",
+            "Trained a deep autoencoder anomaly detection model in PyTorch to learn baseline authentication behavior and detect abnormal login patterns and potential lateral movement (ROC–AUC: 0.83).",
+            "Modeled user-machine authentication events as a bipartite graph and engineered a LangGraph-based AI agent to generate SOC incident summaries, assign severity scores, and automate response workflows."
+        ]
+    },
+    {
+        title: "AI Intern",
+        company: "Assessli, Remote",
+        period: "Aug 2023 – Sep 2023",
+        type: "ai",
+        highlights: [
+            "Built an automated student assessment system using KNN-based response classification and FPDF report generation to evaluate answer similarity with reference solutions, reducing manual grading effort by 40% across 40+ partner schools.",
+            "Refactored a Deep Reinforcement Learning based recommendation system to generate personalized developmental activities for children using longitudinal learning data, improving model performance by 18%."
         ]
     },
     {
         title: "Python Intern",
-        company: "Emkay Global Financial Services Limited",
-        period: "July 2023 - Sep 2023",
+        company: "Emkay Global Financial Services Limited, Mumbai, India",
+        period: "Jul 2023 – Sep 2023",
         type: "work",
         highlights: [
-            "Created a real-time alert system using Python for algorithmic orders without an identifier, featuring dynamic notifications, order export, and query search by symbols, client ID, and user batch, processing inputs every 15 seconds",
-            "Engineered an application to generate order-to-trade ratios from compressed transaction files, automating and customizing email reports of the results",
-            "Conducted a stock prediction study on Infosys using LSTM, forecasting a 5–7% rise pre-earnings and 2–3% drop post-earnings"
+            "Architected a real-time Python alerting system to detect algorithmic orders missing identifiers, processing inputs every 15 seconds and reducing manual monitoring workload by 30% for trading operations teams.",
+            "Automated a Python analytics pipeline to compute order to trade ratios from compressed transaction logs and generate customized email reports, reducing manual compliance analysis time by 50%.",
+            "Analyzed Infosys stock price movements around earnings announcements using an LSTM based time series model, identifying patterns that predicted 5 to 7% pre-earnings increases and 2 to 3% post-earnings corrections."
         ]
     },
     {
@@ -139,7 +161,9 @@ const Experience = () => {
                                         }}
                                         whileHover={{ scale: 1.2, rotate: 360 }}
                                     >
-                                        {exp.type === 'opensource' ? (
+                                        {exp.type === 'ai' ? (
+                                            <FaRobot className="text-white text-sm" />
+                                        ) : exp.type === 'opensource' ? (
                                             <FaCode className="text-white text-sm" />
                                         ) : (
                                             <FaBriefcase className="text-white text-sm" />

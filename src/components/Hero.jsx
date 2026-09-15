@@ -7,7 +7,7 @@ import avatarImg from "../assets/avator.png";
 import ResumePdf from "../assets/Resume.pdf";
 
 const Hero = () => {
-    const roles = ["Software Developer", "Backend Developer", "ML Developer"];
+    const roles = ["Software Developer", "Agentic AI Engineer", "Cloud & Backend Developer", "ML Engineer"];
     const [currentRoleIndex, setCurrentRoleIndex] = useState(0);
 
     useEffect(() => {

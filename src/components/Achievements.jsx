@@ -32,8 +32,8 @@ const achievements = [
         category: "Volunteering"
     },
     {
-        title: "ACM Internship Fair - OC Member",
-        description: "Appointed as OC Member at DJSCE, responsible for onboarding companies and facilitating coordination between them and students",
+        title: "Internship Fair - OC Member",
+        description: "Coordinated the Internship Fair as OC Member at DJ Sanghvi College, managing company onboarding and student engagement",
         icon: FaUsers,
         color: "from-green-400 to-emerald-500",
         category: "Leadership"
@@ -47,14 +47,14 @@ const achievements = [
     },
     {
         title: "JPMorgan Chase - College to Corporate",
-        description: "Successfully completed the External Engagement Program, bridging academia with the corporate world",
+        description: "Selected among the top 60 students across all departments for the JPMorgan Chase College to Corporate Program (2022–2024)",
         icon: FaLightbulb,
         color: "from-blue-400 to-cyan-500",
         category: "Program"
     },
     {
-        title: "Myntra HackerRamp WeForShe'24",
-        description: "Entered the pre-final round, ranking in the top 70 teams out of 29,000+ registrations",
+        title: "Myntra HackerRamp WeForShe 2024",
+        description: "Advanced to the pre-finale round (Top 70 of 29,000+ teams) in the National Myntra HackerRamp WeForShe 2024 hackathon",
         icon: FaTrophy,
         color: "from-yellow-400 to-orange-500",
         category: "Hackathon"

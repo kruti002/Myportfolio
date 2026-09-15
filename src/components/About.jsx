@@ -364,11 +364,11 @@ const About = () => {
                                                 </div>
                                                 <div>
                                                     <div className="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Specialty</div>
-                                                    <div className="text-xs text-blue-400 font-bold">Backend Systems & ML</div>
+                                                    <div className="text-xs text-blue-400 font-bold">Full Stack Development, ML & Cloud</div>
                                                 </div>
                                                 <div>
                                                     <div className="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Focus</div>
-                                                    <div className="text-[10px] text-gray-300 leading-tight">Backend, Cloud, AI, Data-Driven Apps</div>
+                                                    <div className="text-[10px] text-gray-300 leading-tight">Full Stack Development, ML & Cloud, Data-Driven Apps</div>
                                                 </div>
                                             </div>
 

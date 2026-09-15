@@ -3,96 +3,116 @@ import {
     SiReact, SiHtml5, SiCss3, SiJavascript, SiDjango, SiFlask, SiBootstrap, SiTailwindcss, SiCplusplus, SiPython,
     SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiPandas, SiNumpy, SiR,
     SiGooglecloud, SiDocker, SiGit, SiGithub, SiFirebase, SiMongodb, SiMysql, SiMinio,
-    SiFigma, SiCanva, SiPostman
+    SiFigma, SiCanva, SiPostman, SiFastapi, SiPostgresql, SiKubernetes, SiAmazonwebservices,
+    SiTypescript, SiNodedotjs, SiTerraform, SiLinux, SiPytest
 } from "react-icons/si";
-import { FaJava, FaPenNib, FaRegCalendarAlt, FaPuzzlePiece, FaMicrosoft, FaClock, FaBrain, FaChartBar, FaCode, FaCloud, FaUsers, FaUserTie, FaLightbulb, FaAws, FaComments, FaCog } from "react-icons/fa";
-
+import {
+    FaJava, FaPenNib, FaRegCalendarAlt, FaPuzzlePiece, FaMicrosoft, FaClock,
+    FaBrain, FaChartBar, FaCode, FaCloud, FaUsers, FaUserTie, FaLightbulb,
+    FaAws, FaComments, FaCog, FaRobot, FaDatabase, FaProjectDiagram, FaServer, FaCogs, FaInfinity
+} from "react-icons/fa";
 
 const skillCards = [
     {
+        title: "Agentic AI & Machine Learning",
+        icon: FaBrain,
+        description: "Designing autonomous agentic workflows, LLM reasoning architectures, RAG pipelines, and computer vision models.",
+        skills: [
+            { name: "LangGraph", icon: FaRobot },
+            { name: "RAG / LLMs", icon: FaBrain },
+            { name: "Claude / Gemini", icon: FaRobot },
+            { name: "Transformers", icon: FaBrain },
+            { name: "PyTorch", icon: SiPytorch },
+            { name: "TensorFlow", icon: SiTensorflow },
+            { name: "Scikit-Learn", icon: SiScikitlearn },
+            { name: "OpenCV", icon: SiOpencv },
+            { name: "NLP", icon: FaBrain },
+            { name: "Deep Learning", icon: FaProjectDiagram },
+            { name: "XGBoost", icon: FaBrain },
+            { name: "Reinforcement Learning", icon: FaRobot },
+            { name: "NumPy / Pandas", icon: SiPandas }
+        ]
+    },
+    {
         title: "Full-Stack Development",
         icon: FaCode,
-        description: "Building scalable web applications with modern frontend and backend frameworks, including database integration.",
+        description: "Building scalable web applications, microservices, and reactive high-performance user interfaces.",
         skills: [
             { name: "Python", icon: SiPython },
-            { name: "Java", icon: FaJava },
-            { name: "C", icon: SiCplusplus },
-            { name: "C++", icon: SiCplusplus },
             { name: "JavaScript", icon: SiJavascript },
-            { name: "HTML", icon: SiHtml5 },
-            { name: "CSS", icon: SiCss3 },
-            { name: "SQL", icon: SiMysql },
-            { name: "MongoDB", icon: SiMongodb },
-            { name: "Django", icon: SiDjango },
+            { name: "TypeScript", icon: SiTypescript },
+            { name: "Node.js", icon: SiNodedotjs },
+            { name: "React.js", icon: SiReact },
+            { name: "FastAPI", icon: SiFastapi },
             { name: "Flask", icon: SiFlask },
-            { name: "ReactJS", icon: SiReact },
-            { name: "Bootstrap", icon: SiBootstrap },
-            { name: "Tailwind", icon: SiTailwindcss }
+            { name: "Django", icon: SiDjango },
+            { name: "REST APIs", icon: FaServer },
+            { name: "Java", icon: FaJava },
+            { name: "C / C++", icon: SiCplusplus },
+            { name: "Tailwind CSS", icon: SiTailwindcss },
+            { name: "HTML5 / CSS3", icon: SiHtml5 }
         ]
     },
     {
-        title: "Data Science",
-        icon: FaChartBar,
-        description: "Analyzing and visualizing data, performing statistical analysis, and building data-driven insights.",
-        skills: [
-            { name: "NumPy", icon: SiNumpy },
-            { name: "Pandas", icon: SiPandas },
-            { name: "Matplotlib", icon: SiPython },
-            { name: "R", icon: SiR },
-            { name: "MATLAB", icon: FaBrain },
-            { name: "SQL", icon: SiMysql },
-            { name: "Power BI", icon: FaChartBar }
-        ]
-    },
-    {
-        title: "Machine Learning",
-        icon: FaBrain,
-        description: "Building predictive models, NLP systems, and intelligent applications using modern ML frameworks.",
-        skills: [
-            { name: "TensorFlow", icon: SiTensorflow },
-            { name: "PyTorch", icon: SiPytorch },
-            { name: "SciKit Learn", icon: SiScikitlearn },
-            { name: "OpenCV", icon: SiOpencv },
-            { name: "NLP", icon: FaBrain }
-        ]
-    },
-    {
-        title: "Cloud",
+        title: "Cloud & DevOps",
         icon: FaCloud,
-        description: "Cloud platforms and deployment tools for scalable, reliable applications.",
+        description: "Cloud-native infrastructure as code, serverless microservices, and containerized CI/CD orchestration.",
         skills: [
-            { name: "Google Cloud", icon: SiGooglecloud },
-            { name: "AWS", icon: FaAws },
+            { name: "Terraform", icon: SiTerraform },
+            { name: "AWS (S3, SQS, EC2)", icon: SiAmazonwebservices },
+            { name: "Google Cloud (GCP)", icon: SiGooglecloud },
             { name: "Docker", icon: SiDocker },
+            { name: "Kubernetes", icon: SiKubernetes },
+            { name: "CI / CD Pipelines", icon: FaInfinity },
+            { name: "Pytest", icon: SiPytest },
+            { name: "Linux", icon: SiLinux },
+            { name: "Cloud Run & Build", icon: SiGooglecloud },
+            { name: "Git / GitHub", icon: SiGit }
+        ]
+    },
+    {
+        title: "Databases & Data Systems",
+        icon: FaDatabase,
+        description: "Relational, NoSQL, and document stores supporting low-latency retrieval, snapshots, and automated analytics.",
+        skills: [
+            { name: "PostgreSQL", icon: SiPostgresql },
+            { name: "MySQL", icon: SiMysql },
+            { name: "MongoDB", icon: SiMongodb },
+            { name: "AWS DocumentDB", icon: SiAmazonwebservices },
             { name: "Firebase", icon: SiFirebase },
+            { name: "SQL", icon: SiMysql },
+            { name: "R", icon: SiR },
+            { name: "Power BI", icon: FaChartBar },
             { name: "MinIO", icon: SiMinio }
         ]
     },
     {
-        title: "Tools",
+        title: "Core CS & Methodologies",
         icon: FaLightbulb,
-        description: "Design, version control, and collaboration tools that support development.",
+        description: "Computer science foundations, software engineering design principles, and developer toolkits.",
         skills: [
-            { name: "Git", icon: SiGit },
-            { name: "GitHub", icon: SiGithub },
+            { name: "Data Structures & Algos", icon: FaCode },
+            { name: "Software Engineering", icon: FaServer },
+            { name: "Operating Systems", icon: FaCogs },
+            { name: "Deep Learning Theory", icon: FaBrain },
             { name: "Postman", icon: SiPostman },
-            { name: "Microsoft Office", icon: FaMicrosoft },
             { name: "Figma", icon: SiFigma },
-            { name: "Canva", icon: SiCanva }
+            { name: "Canva", icon: SiCanva },
+            { name: "Microsoft Office", icon: FaMicrosoft }
         ]
     },
     {
-        title: "Soft Skills",
+        title: "Leadership & Collaboration",
         icon: FaRegCalendarAlt,
-        description: "Professional skills that help me manage projects, communicate effectively, and collaborate.",
+        description: "Cross-functional collaboration, technical communication, and event management.",
         skills: [
             { name: "Team Collaboration", icon: FaUsers },
             { name: "Leadership", icon: FaUserTie },
             { name: "Problem Solving", icon: FaPuzzlePiece },
-            { name: "Communication", icon: FaComments },
+            { name: "Technical Communication", icon: FaComments },
+            { name: "Stakeholder Management", icon: FaUserTie },
+            { name: "Event Coordination", icon: FaRegCalendarAlt },
             { name: "Adaptability", icon: FaCog },
-            { name: "Event Management", icon: FaRegCalendarAlt },
-            { name: "Content Writing", icon: FaPenNib },
             { name: "Time Management", icon: FaClock }
         ]
     }
