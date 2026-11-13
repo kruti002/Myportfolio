@@ -135,7 +135,7 @@ const About = () => {
                                 <div className="grid grid-cols-2 gap-3">
                                     <div className="bg-white/5 border border-white/5 p-3 rounded-xl flex flex-col items-center">
                                         <div className="text-[8px] text-gray-500 uppercase tracking-widest mb-1">Exp</div>
-                                        <div className="text-xs text-white font-bold">1+ Years</div>
+                                        <div className="text-xs text-white font-bold">2+ Years</div>
                                     </div>
                                     <div className="bg-white/5 border border-white/5 p-3 rounded-xl flex flex-col items-center">
                                         <div className="text-[8px] text-gray-500 uppercase tracking-widest mb-1">Focus</div>
@@ -353,14 +353,14 @@ const About = () => {
 
                                             {/* Bio Text */}
                                             <p className="text-[11px] text-gray-300 leading-5 mb-4 font-sans opacity-90">
-                                                I’m a software developer and machine learning enthusiast with hands-on experience building backend systems, web applications, and AI-powered cloud platforms. Currently pursuing my Master’s in Computer Science, I work across the stack:designing robust backend services, developing responsive web applications, and deploying scalable ML pipelines.
+                                                I’m a software developer and machine learning enthusiast with hands-on experience building backend systems, web applications, and AI-powered cloud platforms. Currently pursuing my Master’s in Computer Science at CU Boulder, I work across the stack: designing robust backend services, building agentic AI and LLM systems, and deploying scalable, cloud-native ML pipelines.
                                             </p>
 
                                             {/* Stats Grid */}
                                             <div className="grid grid-cols-3 gap-4 border-t border-white/5 pt-3">
                                                 <div>
                                                     <div className="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Experience</div>
-                                                    <div className="text-xs text-white font-bold">1+ Years</div>
+                                                    <div className="text-xs text-white font-bold">2+ Years</div>
                                                 </div>
                                                 <div>
                                                     <div className="text-[9px] text-gray-500 uppercase tracking-widest mb-1">Specialty</div>

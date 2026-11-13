@@ -4,12 +4,13 @@ import {
     SiTensorflow, SiPytorch, SiScikitlearn, SiOpencv, SiPandas, SiNumpy, SiR,
     SiGooglecloud, SiDocker, SiGit, SiGithub, SiFirebase, SiMongodb, SiMysql, SiMinio,
     SiFigma, SiCanva, SiPostman, SiFastapi, SiPostgresql, SiKubernetes, SiAmazonwebservices,
-    SiTypescript, SiNodedotjs, SiTerraform, SiLinux, SiPytest
+    SiTypescript, SiNodedotjs, SiTerraform, SiLinux, SiPytest, SiRust, SiDuckdb
 } from "react-icons/si";
 import {
     FaJava, FaPenNib, FaRegCalendarAlt, FaPuzzlePiece, FaMicrosoft, FaClock,
     FaBrain, FaChartBar, FaCode, FaCloud, FaUsers, FaUserTie, FaLightbulb,
-    FaAws, FaComments, FaCog, FaRobot, FaDatabase, FaProjectDiagram, FaServer, FaCogs, FaInfinity
+    FaAws, FaComments, FaCog, FaRobot, FaDatabase, FaProjectDiagram, FaServer, FaCogs, FaInfinity,
+    FaLayerGroup, FaStream
 } from "react-icons/fa";
 
 const skillCards = [
@@ -19,6 +20,8 @@ const skillCards = [
         description: "Designing autonomous agentic workflows, LLM reasoning architectures, RAG pipelines, and computer vision models.",
         skills: [
             { name: "LangGraph", icon: FaRobot },
+            { name: "MCP (Model Context Protocol)", icon: FaLayerGroup },
+            { name: "ReAct / Tool-Calling Agents", icon: FaRobot },
             { name: "RAG / LLMs", icon: FaBrain },
             { name: "Claude / Gemini", icon: FaRobot },
             { name: "Transformers", icon: FaBrain },
@@ -41,12 +44,14 @@ const skillCards = [
             { name: "Python", icon: SiPython },
             { name: "JavaScript", icon: SiJavascript },
             { name: "TypeScript", icon: SiTypescript },
+            { name: "Rust", icon: SiRust },
             { name: "Node.js", icon: SiNodedotjs },
             { name: "React.js", icon: SiReact },
             { name: "FastAPI", icon: SiFastapi },
             { name: "Flask", icon: SiFlask },
             { name: "Django", icon: SiDjango },
             { name: "REST APIs", icon: FaServer },
+            { name: "SSE (Server-Sent Events)", icon: FaStream },
             { name: "Java", icon: FaJava },
             { name: "C / C++", icon: SiCplusplus },
             { name: "Tailwind CSS", icon: SiTailwindcss },
@@ -79,6 +84,7 @@ const skillCards = [
             { name: "MySQL", icon: SiMysql },
             { name: "MongoDB", icon: SiMongodb },
             { name: "AWS DocumentDB", icon: SiAmazonwebservices },
+            { name: "DuckDB", icon: SiDuckdb },
             { name: "Firebase", icon: SiFirebase },
             { name: "SQL", icon: SiMysql },
             { name: "R", icon: SiR },

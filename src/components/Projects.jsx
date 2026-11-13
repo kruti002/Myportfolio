@@ -1,10 +1,11 @@
 import { motion, AnimatePresence } from "framer-motion";
-import { FaGithub, FaExternalLinkAlt, FaCode, FaTimes, FaBrain, FaFileAlt, FaAward, FaShieldAlt, FaLayerGroup, FaServer, FaRobot } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt, FaCode, FaTimes, FaBrain, FaFileAlt, FaAward, FaShieldAlt, FaLayerGroup, FaServer, FaRobot, FaStream, FaEnvelopeOpenText } from "react-icons/fa";
 import {
     SiReact, SiTailwindcss, SiNodedotjs, SiMongodb, SiPython, SiTensorflow, SiFirebase, SiFastapi,
     SiGooglecloud, SiDocker, SiJavascript, SiGooglemaps, SiPostgresql, SiNumpy, SiPandas, SiHtml5,
     SiCss3, SiFlask, SiOpencv, SiKeras, SiFlutter, SiArduino, SiCplusplus, SiAmazonwebservices,
-    SiScikitlearn, SiPytorch, SiTypescript, SiTerraform, SiGrafana, SiLinux, SiPytest
+    SiScikitlearn, SiPytorch, SiTypescript, SiTerraform, SiGrafana, SiLinux, SiPytest,
+    SiRust, SiApachekafka, SiApacheflink, SiGithubactions, SiSelenium, SiExpress, SiDuckdb
 } from "react-icons/si";
 import { useState, useRef, useEffect } from "react";
 import { createPortal } from "react-dom";
@@ -24,6 +25,118 @@ const categories = [
 ];
 
 const projects = [
+    {
+        title: "AgentOS: Resilient Runtime for Autonomous LLM Agents",
+        category: "Agentic AI & ML",
+        badge: "Featured Agentic Runtime",
+        shortDescription: "Fault-tolerant runtime for autonomous LLM agents, orchestrating 16 tools across 8 MCP servers with self-healing recovery and secure execution.",
+        fullDescription: "AgentOS is a fault-tolerant agent runtime built around Claude with a ReAct loop and native tool calling, orchestrating 16 tools across 8 MCP servers spanning filesystem, database, web, shell, Git, HTTP, and Python execution. A self-healing recovery pipeline—backoff retries, argument repair, tool fallbacks, query expansion, and loop detection—raised benchmark task completion from ~30% to 100% across 100 fault-injection scenarios. Agent execution is secured with policy-based access control, prompt-injection isolation, filesystem sandboxing, and human-approval gates, all backed by FastAPI, React, SSE, DuckDB, Docker, and pytest.",
+        technologies: [
+            { name: "Python", icon: SiPython },
+            { name: "Claude / ReAct", icon: FaRobot },
+            { name: "MCP", icon: FaLayerGroup },
+            { name: "FastAPI", icon: SiFastapi },
+            { name: "React", icon: SiReact },
+            { name: "SSE", icon: FaStream },
+            { name: "DuckDB", icon: SiDuckdb },
+            { name: "Docker", icon: SiDocker },
+            { name: "Pytest", icon: SiPytest }
+        ],
+        links: {
+            github: "https://github.com/kruti002/AgentOS",
+            demo: "https://github.com/kruti002/AgentOS"
+        },
+        color: "from-cyan-500 via-blue-600 to-indigo-600",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=800&h=500&fit=crop",
+        features: [
+            "ReAct agent loop around Claude with native tool calling across 16 tools and 8 MCP servers",
+            "Self-healing recovery: backoff retries, argument repair, tool fallbacks, query expansion, and loop detection (task completion ~30% → 100% across 100 fault-injection scenarios)",
+            "Secure execution: policy-based access control, prompt-injection isolation, filesystem sandboxing, and human-approval gates",
+            "Backed by FastAPI, React, SSE streaming, DuckDB, Docker, and pytest"
+        ]
+    },
+    {
+        title: "StreamGuard: Real-Time Data Quality Firewall",
+        category: "Cloud & Distributed",
+        badge: "Streaming Data Contracts",
+        shortDescription: "Real-time data-quality firewall on Confluent Cloud that validates every event against a data contract, quarantines violations, and scores source health live.",
+        fullDescription: "StreamGuard sits as a firewall between untrusted producers and trusted consumers on Confluent Cloud. Every event is checked against a data contract (required fields, value ranges, known currencies, parseable and fresh timestamps); valid records flow to a clean lane while violations are quarantined to a dead-letter queue tagged with the exact rule they broke—never silently dropped. Flink SQL enforces the contract, routes clean vs. quarantined records, and computes per-source error rates in 10-second event-time windows, scored live as OK → WATCH → BREACH against a 2% data-quality SLA. A React dashboard (Express + SSE) mirrors the same contract to drive a low-latency source health board, error-rate forecast, and live dead-letter feed.",
+        technologies: [
+            { name: "Apache Kafka", icon: SiApachekafka },
+            { name: "Flink SQL", icon: SiApacheflink },
+            { name: "Confluent Cloud", icon: SiApachekafka },
+            { name: "Node.js", icon: SiNodedotjs },
+            { name: "Express", icon: SiExpress },
+            { name: "React", icon: SiReact },
+            { name: "SSE", icon: FaStream },
+            { name: "JavaScript", icon: SiJavascript }
+        ],
+        links: {
+            github: "https://github.com/kruti002/StreamGuard",
+            demo: "https://github.com/kruti002/StreamGuard"
+        },
+        color: "from-sky-500 via-cyan-500 to-teal-500",
+        image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
+        features: [
+            "Data contracts enforced in Flink SQL: required fields, value ranges, currency enums, timestamp parseability, and 5-minute freshness",
+            "Dead-letter quarantine tagging each rejected record with the exact rule it broke (never silently dropped)",
+            "Per-source error rates in 10s event-time windows scored OK → WATCH → BREACH against a 2% SLA",
+            "React + Express + SSE dashboard: live source health board, error-rate forecast, and dead-letter feed"
+        ]
+    },
+    {
+        title: "llm-stream-server: Async LLM Streaming in Rust",
+        category: "Cloud & Distributed",
+        badge: "Systems / Rust",
+        shortDescription: "A Rust async LLM inference streaming server built as a Cargo workspace, streaming model output incrementally over Tokio and Axum.",
+        fullDescription: "llm-stream-server is a Rust streaming server for LLM inference, structured as a multi-crate Cargo workspace (core, server, py, bench) with centralized dependency versions to keep the graph consistent as it grows. The core backend talks to an Ollama HTTP endpoint using reqwest with a pure-Rust rustls TLS stack, exposing the response body as a futures stream of byte chunks so NDJSON tokens are parsed incrementally and can be cancelled mid-stream by dropping the stream. The server crate is built on Tokio, Axum, tower/tower-http (tracing, request-id), and clap for configuration, and ships with a Dockerfile for cross-platform builds.",
+        technologies: [
+            { name: "Rust", icon: SiRust },
+            { name: "Tokio", icon: SiRust },
+            { name: "Axum", icon: SiRust },
+            { name: "reqwest / rustls", icon: SiRust },
+            { name: "Docker", icon: SiDocker },
+            { name: "Streaming / SSE", icon: FaStream }
+        ],
+        links: {
+            github: "https://github.com/kruti002/llm-stream-server",
+            demo: "https://github.com/kruti002/llm-stream-server"
+        },
+        color: "from-orange-600 via-amber-600 to-yellow-500",
+        image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&h=500&fit=crop",
+        features: [
+            "Multi-crate Cargo workspace (core / server / py / bench) with centralized, version-pinned dependencies",
+            "Incremental NDJSON token streaming from Ollama via reqwest with a futures byte-chunk stream",
+            "Mid-stream cancellation by dropping the response stream; pure-Rust rustls TLS for simple cross-platform builds",
+            "Async Tokio + Axum server with tower-http tracing/request-id and a Dockerfile for portable builds"
+        ]
+    },
+    {
+        title: "JobScraper: Early-Career Tech Job Digest",
+        category: "Full Stack & Mobile",
+        badge: "Automation / GitHub Actions",
+        shortDescription: "A Python job aggregator that filters early-career tech roles from public APIs, emails a digest every 4 hours, and tracks applications with follow-up reminders.",
+        fullDescription: "JobScraper finds early-career / new-grad tech roles (software, cloud, data, ML/AI, agentic) across public ATS and job APIs—Greenhouse, Lever, Ashby, Y Combinator (with auto-discovered boards), SimplifyJobs, The Muse, Remotive, Himalayas, RemoteOK, Adzuna, and USAJobs—then filters them through a multi-stage pipeline (early-career, on-topic, no citizenship/clearance, sponsorship-friendly, location, timing, recency). It emails a clean digest every 4 hours grouped by age and tagged with the best-fit resume variant, and runs for free on GitHub Actions. An application tracker imports an inbox file into a CSV, starts a 5-business-day follow-up clock, and drafts follow-up emails plus LinkedIn outreach notes.",
+        technologies: [
+            { name: "Python", icon: SiPython },
+            { name: "GitHub Actions", icon: SiGithubactions },
+            { name: "REST APIs", icon: FaServer },
+            { name: "Gmail SMTP", icon: FaEnvelopeOpenText },
+            { name: "Automation", icon: SiSelenium }
+        ],
+        links: {
+            github: "https://github.com/kruti002/JobScraper",
+            demo: "https://github.com/kruti002/JobScraper"
+        },
+        color: "from-emerald-500 via-green-500 to-lime-500",
+        image: "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&h=500&fit=crop",
+        features: [
+            "Aggregates public ATS/job APIs (Greenhouse, Lever, Ashby, YC, The Muse, Remotive, Adzuna, USAJobs) with graceful per-source failure",
+            "Multi-stage filter: early-career, on-topic, no citizenship/clearance, sponsorship-friendly, location, timing, recency",
+            "Emails a digest every 4 hours (grouped by age, tagged with best-fit resume variant), running free on GitHub Actions",
+            "Application tracker with a 5-business-day follow-up clock plus drafted follow-up emails and LinkedIn notes"
+        ]
+    },
     {
         title: "ChronoBase: Git for Databases",
         category: "Cloud & Distributed",
